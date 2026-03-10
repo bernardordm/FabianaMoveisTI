@@ -1,0 +1,121 @@
+@baseUrl = http://localhost:3001
+
+# Cadastro de Usuário
+###
+GET {{baseUrl}}/users/?limit=100&offset=100
+###
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+  "nome": "Anderson",
+  "cargo": "motorista",
+  "email": "anderson@gmail.com",
+  "password": "deposito123"
+}
+###
+PATCH {{baseUrl}}/users/3
+Content-Type: application/json
+
+{
+  "password": "loja1234"
+}
+###
+DELETE {{baseUrl}}/users/4
+
+
+
+
+
+
+
+# Login do usuário
+###
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "deposito@gmail.com",
+  "password": "deposito123"
+}
+###
+GET {{baseUrl}}/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImRlcG9zaXRvQGdtYWlsLmNvbSIsImlhdCI6MTc0Mzc5MjcwMywiZXhwIjoxNzQzNzk2MzAzfQ.x3PCijL-wYjMGSuFFzAo3eiM4m84iSBOd0lsMcDvY44
+###
+POST {{baseUrl}}/auth/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImRlcG9zaXRvQGdtYWlsLmNvbSIsImlhdCI6MTc0Mzc5MjcwMywiZXhwIjoxNzQzNzk2MzAzfQ.x3PCijL-wYjMGSuFFzAo3eiM4m84iSBOd0lsMcDvY44
+
+
+
+
+
+
+
+
+
+# Cadastro de Entrega
+###
+GET {{baseUrl}}/deliveries/?limit=100&offset=0
+###
+POST {{baseUrl}}/deliveries/
+Content-Type: application/json
+
+{
+  "productName": "Ventilador Philco",
+  "customerName": "Antonio Bastos",
+  "productValue": 799.90,
+  "deliveryAddress": "Rua Riviera, 1431, Pampulha, Belo Horizonte, Minas Gerais",
+  "deliveryDate": "2025-07-25",
+  "observations": "Entregar com cuidado, produto frágil"
+}
+###
+GET {{baseUrl}}/deliveries/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEwLCJlbWFpbCI6ImRlcG9zaXRvQGdtYWlsLmNvbSIsImlhdCI6MTc0Mzc5MjcwMywiZXhwIjoxNzQzNzk2MzAzfQ.x3PCijL-wYjMGSuFFzAo3eiM4m84iSBOd0lsMcDvY44
+###
+PATCH {{baseUrl}}/deliveries/1
+Content-Type: application/json
+
+{
+  "deliveryAddress": "Avenida Paulista, 1578, Bela Vista, São Paulo - SP",
+  "deliveryDate": "2025-04-15"
+}
+###
+DELETE {{baseUrl}}/deliveries/1
+
+
+
+
+# Gerar rotas de entrega
+###
+GET {{baseUrl}}/delivery-routes/addresses?date=2025-04-10
+
+###
+POST {{baseUrl}}/delivery-routes/
+Content-Type: application/json
+
+{
+  "routeDate": "2025-04-10"
+}
+
+###
+GET {{baseUrl}}/delivery-routes/date/2025-04-11
+
+###
+GET {{baseUrl}}/delivery-routes/latest
+
+###
+GET {{baseUrl}}/delivery-routes/
+
+
+# Gerar relatório por período de data
+###
+POST {{baseUrl}}/reports/by-date-range
+Content-Type: application/json
+
+{
+  "startDate": "2025-04-29",
+  "endDate": "2025-05-01"
+}
+
+
+
