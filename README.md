@@ -58,10 +58,6 @@ Antes de executar a aplicação, certifique-se de ter instalado:
 ### Opção 1: Executar com Docker (Recomendado)
 
 1. **Clone o repositório:**
-```bash
-git clone https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2025-1-ti3-9577100-fabiana-moveis.git
-cd pmg-es-2025-1-ti3-9577100-fabiana-moveis/Codigo
-```
 
 2. **Execute a aplicação com Docker Compose:**
 ```bash
@@ -89,20 +85,20 @@ npm install
 3. **Configure as variáveis de ambiente:**
 Crie um arquivo `.env` na pasta backend com as seguintes variáveis:
 ```
-PORT=3001
+PORT=
 
-DB_HOST=fabianamoveis.clyoiyuyk7o4.us-east-2.rds.amazonaws.com
-DB_PORT=5432
-DB_USERNAME=fabianamoveis
-DB_PASSWORD=pucMINAS123$
-DB_NAME=fabianamoveis
-DB_SSL=true
+DB_HOST=
+DB_PORT=
+DB_USERNAME=
+DB_PASSWORD=
+DB_NAME=
+DB_SSL=
 
-JWT_SECRET=your-secret-key
-JWT_EXPIRATION=1h
+JWT_SECRET=
+JWT_EXPIRATION=
 
-JWT_REFRESH_SECRET=your-refresh-secret-key
-JWT_REFRESH_EXPIRATION=7d
+JWT_REFRESH_SECRET=
+JWT_REFRESH_EXPIRATION=
 ```
 
 4. **Execute o backend:**
@@ -272,19 +268,6 @@ Sistema de geração de relatórios personalizados por período.
 - Análise de rotas
 - Relatórios em PDF
 
-## Credenciais de Acesso Padrão
-
-Para teste inicial do sistema, utilize as seguintes credenciais:
-
-### Administrador/Gerente
-- **Email:** fabiana@gmail.com
-- **Senha:** fabiana123
-
-### Motorista (teste)
-- **Email:** anderson@gmail.com
-- **Senha:** anderson123
-
-> ⚠️ **Importante:** Altere essas credenciais padrão em ambiente de produção por questões de segurança.
 
 ## Configurações Adicionais
 
@@ -309,8 +292,8 @@ Para usar PostgreSQL local em vez da AWS:
 
 2. **Configure as variáveis de ambiente:**
 ```env
-DB_HOST=localhost
-DB_PORT=5432
+DB_HOST=
+DB_PORT=
 DB_USERNAME=seu_usuario
 DB_PASSWORD=sua_senha
 DB_NAME=fabianamoveis
